@@ -4,39 +4,45 @@
 .products{
   table{
     border-collapse: collapse;
-    
   }
-  table tr td {
+  
+  table tr td{
     padding:5px;
     vertical-align: top;
   }
-  .list_image {
+  
+  .list_image{
     width: 60px;
     height: 70px;
   }
-  .list_description {
+  
+  .list_description{
     width: 60%;
     dl{
       matgine: 0;
     }
-    dt {
+    dt{
       color: #244;
       font-weight: bold;
       font-size: larger;      
     }
-    dd {
+    dd{
       margin: 0;
     }
   }
-  .list_action {
+  
+  .list_action{
     font-size: x-small;
     text-align: right;
     padding-left: 1 em;
   }
-  .list_line_even {
-    background: #e0f8f8;
+  .list_line_even{
+    background-color: #e0f8f8;
+
   }
-  .list_line_odd {
-    background:#f8b0f8;
+  .list_line_odd{
+    background-color: #f8b0f8;
+
+    
   }
 }
