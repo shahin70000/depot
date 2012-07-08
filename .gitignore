@@ -15,7 +15,8 @@
 /tmp
 
 # Ignore rubymine files
-.idea
+.idea/
+.idea/*
 
 log/*.log
 tmp/**/*
