@@ -14,6 +14,12 @@ class ProductTest < ActiveSupport::TestCase
    assert product.errors[:price].any?
    assert product.errors[:imag_url].any?
   end
+
+  test " title should be 10 character or longer" do
+    product = Product.new(title: "test", description: "yyy", imag_url:"aaa.jpg")
+    assert product.invalid?
+    assert_equal "must be more than 10 characters", product.errors[:title].join('; ')
+  end
    test "product price must be positive" do
      product = Product.new(title: "My Book Title", description: "yyy", imag_url: "zzz.jpg")
      product.price = -1
