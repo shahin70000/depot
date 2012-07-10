@@ -48,4 +48,9 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
+
+  test "should have title" do
+    get :show, id: @product
+    assert_select 'p b', 'Title:'
+  end
 end
