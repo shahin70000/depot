@@ -7,6 +7,22 @@
   <% @cart.line_items.each do |item| %>
   <li><%=  item.quantity %> <%= item.product.title %></li>
   <% end %>
+
+  <div class="cart_title">Your Cart</div>
+  <table>
+    <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= item.quantity %>&items;</td>
+      <td><%= item.product.title %></td>
+      <td class="item_price"><%=  number_currency(item.total_price) %></td>
+    </tr>
+    <% end %>
+
+    <tr class="total_line">
+      <td colspan="2">Total</td>
+      <td class="total_cell"><%=  number_to_currency(@cart.total_price) %></td>
+    </tr>
+  </table>
 </ul>
 <%=  button_to 'Empty cart', @cart, method: :delete, confirm: 'Are you sure?' %>
 
