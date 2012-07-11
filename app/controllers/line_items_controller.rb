@@ -43,11 +43,15 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-   # this code from the book no longer works because of a change in
-   # rails mass assignment; the following two lines are replacing:
-   # @line_item = @cart.line_items.build(product: product)
-    @line_item = @cart.line_items.build
-    @line_item.product = product
+   ## this code from the book no longer works because of a change in
+   ## rails mass assignment; the following two lines are replacing:
+   ## @line_item = @cart.line_items.build(product: product)
+
+   # Line was updated
+   # @line_item = @cart.line_items.build
+   # @line_item.product = product
+    @line_item = @cart.add_product(product.id)
+
 
     respond_to do |format|
       if @line_item.save
