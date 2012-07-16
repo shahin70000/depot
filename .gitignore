@@ -18,6 +18,15 @@
 .idea/
 .idea/*
 
+# Ignore yard files
+.yardoc/
+.yardoc/*
+
+# Ignore documentation
+doc/
+doc/*
+
+
 log/*.log
 tmp/**/*
 config/database.yml
